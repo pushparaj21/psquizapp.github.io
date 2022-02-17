@@ -247,6 +247,7 @@ const getCheckAnswer = () => {
   answers.forEach((curAnsElem) => {
     if (curAnsElem.checked) {
       answer = curAnsElem.id;
+      curAnsElem.checked = false;
     }
   });
   return answer;
