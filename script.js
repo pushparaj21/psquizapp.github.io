@@ -233,7 +233,9 @@ const d_text = document.getElementById("d_text");
 const submitbtn = document.getElementById("submit");
 const answers = document.querySelectorAll(".answer");
 let currentQuiz = 0;
+
 loadQuiz();
+
 function loadQuiz() {
   const currentQuizData = quizData[currentQuiz];
   questionEl.innerText = currentQuizData.question;
@@ -242,18 +244,24 @@ function loadQuiz() {
   c_text.innerText = currentQuizData.c;
   d_text.innerText = currentQuizData.d;
 }
+
 const getCheckAnswer = () => {
   let answer;
   answers.forEach((curAnsElem) => {
     if (curAnsElem.checked) {
       answer = curAnsElem.id;
+      curAnsElem.checked = false;
     }
   });
   return answer;
 };
 let score = 0;
 submitbtn.addEventListener("click", () => {
+  // Event.preventDefault();
+  // console.log(answer);
+
   const checkedAnswer = getCheckAnswer();
+
   if (checkedAnswer == quizData[currentQuiz].correct) {
     score++;
   }
