@@ -250,7 +250,9 @@ leftButton.addEventListener("click", () => {
 });
 
 let currentQuiz = 0;
+
 loadQuiz();
+
 function loadQuiz() {
   currentQuestion.innerText = `${currentQuiz + 1}/${quizData.length}`;
   console.log(currentQuestion.innerText);
@@ -261,6 +263,7 @@ function loadQuiz() {
   c_text.innerText = currentQuizData.c;
   d_text.innerText = currentQuizData.d;
 }
+
 const getCheckAnswer = () => {
   let answer;
   answers.forEach((curAnsElem) => {
@@ -273,7 +276,11 @@ const getCheckAnswer = () => {
 };
 let score = 0;
 submitbtn.addEventListener("click", () => {
+  // Event.preventDefault();
+  // console.log(answer);
+
   const checkedAnswer = getCheckAnswer();
+
   if (checkedAnswer == quizData[currentQuiz].correct) {
     score++;
   }
