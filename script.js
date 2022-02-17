@@ -232,9 +232,28 @@ const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
 const submitbtn = document.getElementById("submit");
 const answers = document.querySelectorAll(".answer");
+const leftButton = document.getElementById("left");
+const rightButton = document.getElementById("right");
+const currentQuestion = document.getElementById("currentQuestion");
+
+// move button
+rightButton.addEventListener("click", () => {
+  currentQuiz++;
+  currentQuiz < quizData.length
+    ? loadQuiz()
+    : alert("you finished and your score is : " + score);
+});
+
+leftButton.addEventListener("click", () => {
+  currentQuiz ? currentQuiz-- : currentQuiz;
+  loadQuiz();
+});
+
 let currentQuiz = 0;
 loadQuiz();
 function loadQuiz() {
+  currentQuestion.innerText = `${currentQuiz + 1}/${quizData.length}`;
+  console.log(currentQuestion.innerText);
   const currentQuizData = quizData[currentQuiz];
   questionEl.innerText = currentQuizData.question;
   a_text.innerText = currentQuizData.a;
@@ -257,13 +276,5 @@ submitbtn.addEventListener("click", () => {
   const checkedAnswer = getCheckAnswer();
   if (checkedAnswer == quizData[currentQuiz].correct) {
     score++;
-  }
-  currentQuiz++;
-
-  if (currentQuiz < quizData.length) {
-    loadQuiz();
-  } else {
-    //to do show win prizeg
-    alert("you finished and your score is : " + score);
   }
 });

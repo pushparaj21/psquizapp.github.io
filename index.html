@@ -11,38 +11,44 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <script src="./script.js" defer></script>
     <title>Quizapp</title>
   </head>
   <body>
-    <div>
-      <i class="fa-solid fa-circle-arrow-left"></i>
-      <div id="quiz-container">
-        <div class="quiz_header">
-          <h3 id="question">question</h3>
-          <ul>
-            <li>
-              <input type="radio" id="a" name="answer" class="answer" />
-              <label id="a_text" for="a">option</label>
-            </li>
-            <li>
-              <input type="radio" id="b" name="answer" class="answer" />
-              <label id="b_text" for="b">option</label>
-            </li>
-            <li>
-              <input type="radio" id="c" name="answer" class="answer" />
-              <label id="c_text" for="c">option</label>
-            </li>
-            <li>
-              <input type="radio" id="d" name="answer" class="answer" />
-              <label id="d_text" for="d">option</label>
-            </li>
-          </ul>
-        </div>
+    <!-- <div> -->
 
-        <button id="submit">Submit</button>
+    <div id="quiz-container">
+      <div id="navigation">
+        <i class="fa-solid fa-circle-arrow-left" id="left"></i>
+        <h4 id="currentQuestion"></h4>
+        <i class="fa-solid fa-circle-arrow-right" id="right"></i>
       </div>
-      <i class="fa-solid fa-circle-arrow-right"></i>
+      <div class="quiz_header">
+        <h3 id="question">question</h3>
+        <ul>
+          <li>
+            <input type="radio" id="a" name="answer" class="answer" />
+            <label id="a_text" for="a">option</label>
+          </li>
+          <li>
+            <input type="radio" id="b" name="answer" class="answer" />
+            <label id="b_text" for="b">option</label>
+          </li>
+          <li>
+            <input type="radio" id="c" name="answer" class="answer" />
+            <label id="c_text" for="c">option</label>
+          </li>
+          <li>
+            <input type="radio" id="d" name="answer" class="answer" />
+            <label id="d_text" for="d">option</label>
+          </li>
+        </ul>
+      </div>
+
+      <button id="submit">Submit</button>
     </div>
+
+    <!-- </div> -->
   </body>
 </html>
